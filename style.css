@@ -946,3 +946,24 @@ footer {
         justify-content: center;
     }
 }
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark header,
+body.dark nav,
+body.dark footer {
+    background: #1e1e1e !important;
+}
+
+body.dark .product-card,
+body.dark .category-card,
+body.dark .modal-content {
+    background: #222;
+    color: #fff;
+}
+
+body.dark .btn {
+    background: var(--primary-dark);
+}
