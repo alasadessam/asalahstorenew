@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج | أصالة</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header (نفس الهيدر) -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                🚚 شحن مجاني للطلبات فوق 500 ريال | 🎁 خصم 20% على أول طلب باستخدام كود: WELCOME20
+            </div>
+        </div>
+        <div class="container">
+            <div class="header-main">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-crown"></i>
+                    أصالة
+                </a>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="ابحث عن منتجاتك المفضلة...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge" id="cartCount">0</span>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="index.html#products">منتجاتنا</a></li>
+                    <li><a href="#">الأكثر مبيعاً</a></li>
+                    <li><a href="#">عروض خاصة</a></li>
+                    <li><a href="#">العلامات التجارية</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Page -->
+    <section class="product-page">
+        <div class="container" id="productContainer">
+            <!-- يتم إدخال بيانات المنتج هنا عبر JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>عن أصالة</h3>
+                    <p style="color: #aaa; line-height: 1.8;">منصة تسوق إلكتروني رائدة تقدم تجربة تسوق فريدة مع مجموعة واسعة من المنتجات عالية الجودة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-left: 10px;"></i> الرياض، المملكة العربية السعودية</li>
+                        <li><i class="fas fa-phone" style="margin-left: 10px;"></i> 9200xxxx</li>
+                        <li><i class="fas fa-envelope" style="margin-left: 10px;"></i> info@asalah.com</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section newsletter">
+                    <h3>النشرة البريدية</h3>
+                    <p style="color: #aaa; margin-bottom: 15px;">اشترك للحصول على أحدث العروض</p>
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <button class="btn" style="width: 100%;">اشتراك</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2024 أصالة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // قراءة ID من الرابط
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get("id"));
+
+        // جلب بيانات المنتج
+        const product = products.find(p => p.id === productId);
+
+        const container = document.getElementById("productContainer");
+
+        if (!product) {
+            container.innerHTML = "<h2>المنتج غير موجود</h2>";
+        } else {
+            container.innerHTML = `
+                <div class="modal-body" style="grid-template-columns: 1fr 1fr; padding: 40px;">
+                    <div class="modal-img" style="min-height: 350px;">${product.image}</div>
+
+                    <div class="modal-info">
+                        <span class="product-category">${getCategoryName(product.category)}</span>
+                        <h2>${product.name}</h2>
+
+                        <div class="modal-price">${product.price} ريال</div>
+
+                        <div class="rating" style="margin-bottom: 20px;">
+                            ${Array(product.rating).fill('<i class="fas fa-star"></i>').join('')}
+                            ${Array(5 - product.rating).fill('<i class="far fa-star"></i>').join('')}
+                        </div>
+
+                        <p class="modal-description">${product.description}</p>
+
+                        <div class="size-options">
+                            <h4>الكمية:</h4>
+                            <div class="quantity-control" style="justify-content: flex-start;">
+                                <button class="qty-btn" onclick="this.nextElementSibling.textContent--">-</button>
+                                <span>1</span>
+                                <button class="qty-btn" onclick="this.previousElementSibling.textContent++">+</button>
+                            </div>
+                        </div>
+
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">
+                            <i class="fas fa-shopping-bag"></i> أضف إلى السلة
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>
