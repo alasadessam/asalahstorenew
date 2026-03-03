@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | أصالة</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                🚚 شحن مجاني للطلبات فوق 500 ريال | 🎁 خصم 20% على أول طلب باستخدام كود: WELCOME20
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="header-main">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-crown"></i> أصالة
+                </a>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="ابحث عن منتجاتك المفضلة...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge" id="cartCount">0</span>
+                    </button>
+
+                    <button class="icon-btn" onclick="toggleDarkMode()">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <a href="login.html" class="icon-btn">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#products">منتجاتنا</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html" class="active">تواصل معنا</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h1 class="section-title">تواصل معنا</h1>
+
+            <div class="contact-grid">
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+
+                    <p><i class="fas fa-map-marker-alt"></i> الرياض – المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> 9200xxxx</p>
+                    <p><i class="fas fa-envelope"></i> support@asalah.com</p>
+
+                    <h3 style="margin-top: 25px;">تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>أرسل رسالة</h3>
+
+                    <form>
+                        <label>الاسم الكامل</label>
+                        <input type="text" placeholder="اكتب اسمك">
+
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" placeholder="example@email.com">
+
+                        <label>الرسالة</label>
+                        <textarea placeholder="اكتب رسالتك هنا"></textarea>
+
+                        <button class="btn" style="width: 100%;">إرسال</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2024 أصالة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
